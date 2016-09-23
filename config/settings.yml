@@ -1,0 +1,10 @@
+database:
+     driver: pdo_sqlsrv
+     dbname: LOCALIZACION_WS
+     host: localhost
+     user: sa
+     password: 1cc44dm1n
+
+
+users:
+    admin: [ROLE_ADMIN, nhDr7OyKlXQju+Ge/WKGrPQ9lPBSUFfpK+B1xqx/+8zLZqRNX0+5G1zBQklXUFy86lCpkAofsExlXiorUcKSNQ==]

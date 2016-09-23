@@ -1,0 +1,8 @@
+/vendor/
+.svn
+.idea
+/web/components
+composer.lock
+composer.phar
+/var/cache
+/var/logs

@@ -1,0 +1,24 @@
+{
+  "name": "LocalizaWS",
+  "authors": [
+    "Javier Madueño <jmadueno@iccaweb.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "web/components"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "highcharts": "^4.2.6",
+    "bootstrap-datepicker": "^1.6.4"
+  }
+}

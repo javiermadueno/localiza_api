@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Cliente {{ cliente.nombre }}</h1>
+    <hr/>
+
+    <h3>Usuarios</h3>
+    {% include 'usuarios/tabla_usuarios.html.twig' with {'usuarios': cliente.usuarios} %}
+
+{% endblock content %}

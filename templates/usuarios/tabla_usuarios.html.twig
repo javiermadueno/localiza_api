@@ -1,0 +1,29 @@
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Fuentes</th>
+        <th>Metodos</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.username }}</td>
+            <td>
+                {% for fuente in 1..6 %}
+                    <label class="checkbox-inline" for="fuente_{{ usuario.id }}_{{ fuente }}">
+                        <input type="checkbox" id="fuente_{{ usuario.id }}_{{ fuente }}"
+                               name="fuente[{{ usuario.id }}][{{ fuente }}]"
+                               value="{{ fuente }}" {{ 'F'~fuente in usuario.getFuentes ? 'checked' : '' }}/> {{ fuente }}
+                    </label>
+                {% endfor %}
+            </td>
+            <td>{{ usuario.getMetodos()|join(', ') }}</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

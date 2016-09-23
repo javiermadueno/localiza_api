@@ -1,0 +1,68 @@
+{% if resumen %}
+    <div class="row">
+        {% if resumen.data | length > 0 %}
+            <div class="col-sm-3">
+                <div class=" card col-sm-12"
+                     style=" background: transparent linear-gradient(to right, rgb(54, 122, 189) 50%, rgba(54, 122, 189, 0.8) 50%) repeat scroll 0% 0%;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="icon" style="background-color: rgb(54, 122, 189);">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text card-center">
+                                <h3 class="title"> {{ resumen.data.nombre }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class=" card col-sm-12"
+                     style="background: transparent linear-gradient(to right, rgb(243, 165, 48) 50%, rgba(243, 165, 48, 0.8) 50%) repeat scroll 0% 0%;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="icon" style="background-color: rgb(243, 165, 48);">
+                                <i class="fa fa-send"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text">
+                                <var>{{ resumen.data.entradas|default(0) }}</var>
+                                <label class="text-muted"> Peticiones </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class=" card col-sm-12"
+                     style="background: transparent linear-gradient(to right, rgb(136, 197, 66) 50%, rgba(136, 197, 66, 0.8) 50%) repeat scroll 0% 0%;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="icon" style="background-color: rgb(136, 197, 66)">
+                                <i class="fa fa-thumbs-up"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text">
+                                <var>{{ resumen.data.salidas|default(0) }}</var>
+                                <label class="text-muted"> Salidas </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-md-12">
+                <div class="alert alert-warning">
+                    <p>No se han encontrado resultados</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endif %}

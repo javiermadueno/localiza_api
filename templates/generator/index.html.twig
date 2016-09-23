@@ -1,0 +1,35 @@
+{%  extends 'layout.html.twig' %}
+
+{% set active_page = 'generator' %}
+
+{% block content %}
+
+    <h3>Codificador de contraseñas</h3>
+    <hr/>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well">
+                <form action="" class="form-inline">
+                    <div class="form-group">
+                        <label for="pass">Contraseña</label>
+                        <input id="pass" class="form-control" type="text" name="pass" value="{{ app.request.query.get('pass')}}"/>
+                    </div>
+                    <button class="btn btn-warning" type="submit"><i class="fa fa-barcode"></i> Codificar </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% if result %}
+        <div class="alert alert-success">
+            <p>{{ result }}</p>
+        </div>
+    {% elseif error %}
+        <div class="alert alert-danger">
+            <p>Debe indicar una contraseña</p>
+        </div>
+    {% endif %}
+
+
+
+{% endblock content %}

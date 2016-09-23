@@ -1,0 +1,25 @@
+<table class="table table-striped table-hover table-center">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Consolidar</th>
+        <th>Transformar</th>
+        <th>Controles</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cliente in clientes %}
+        <tr>
+            <td>#{{ cliente.id_cliente }} <input type="hidden" name="cliente[id_cliente]"
+                                                 value="{{ cliente.id_cliente }}"/></td>
+            <td><a href="{{ path('clientes_show', {'id': cliente.id_cliente}) }}">{{ cliente.nombre }}</a>
+            </td>
+            <td> {% if cliente.consolidar %}<i class="fa fa-check fa-lg"></i>{% endif %} </td>
+            <td> {% if cliente.transformar %}<i class="fa fa-check fa-lg"></i>{% endif %}</td>
+            <td><a href="{{ path('clientes_show', {'id': cliente.id_cliente}) }}" class="btn btn-default"><i
+                            class="fa fa-edit"></i></a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
