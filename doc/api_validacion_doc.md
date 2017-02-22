@@ -20,14 +20,15 @@
 * **spGeneraPeticion**: Crea un registro nuevo en la tabla `peticion`con los datos aportados.
 * **spCreaPresalidas**: Este procedimiento almacenado recibe como parámetro el `id_peticion` que se ha obtenido en el procedimiento almacenado anterior. Busca todas las fuentes que hay registradas en el sistema y calcula los permisos que tiene el usuario. Por cada fuente llama al procedimiento `spInsertaPresalida` para crear un registro nuevo.
 * **spGetFuentesUsuario**: Obtiene un entero que representa los permisos que tiene el usuario. Cada fuente tiene un valor que es potencia de 2, de tal manera que si un usuario tiene permiso para utilizar la F1, F2 y F5 se obtendrá un valor de 1 + 2 + 16 = 19
+
 	| Fuente | Valor |
-    |--------|-------|
-    | F1     | 1     |
-    | F2     | 2     |
-    | F3     | 4     |
-    | F4     | 8     |
-    | F5     | 16    |
-    | F6     | 32    |
+	|--------|-------|
+	| F1     | 1     |
+	| F2     | 2     |
+	| F3     | 4     |
+	| F4     | 8     |
+	| F5     | 16    |
+	| F6     | 32    |
     Con este valor y utilizando la operacion de bit `&` se puede saber si el usuario tiene permisos para la fuente. Si el valor de esta opeación es distinto de 0 es que el usuario tiene permisos para esta fuente.
 * **spBuscaIdPersona**: Busca el `ID_PERSONA` en las tablas del webservice según los parametros especificados (DNI, Fecha_nacimiento, nombre_completo).
 * **spInsertaPresalida**: Recibe el `id_peticion`y el valor correspondiente de la `fuente`. Busca en las tablas de datos del Webservice los datos correspondientes de la petición y la fuente especificada y crea una presalida.
